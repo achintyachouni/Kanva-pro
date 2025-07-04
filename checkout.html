@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Complete Your Order</title>
+    <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="checkout-page-body">
+
+    <div class="checkout-container">
+        <h1>Complete Your Order</h1>
+
+        <div class="order-summary">
+            <h2>Your Selected Plan</h2>
+            <div id="selected-plan-details">
+                <!-- Plan details will be loaded here by script.js -->
+                 <p>Loading plan details...</p>
+            </div>
+        </div>
+
+        <div class="customer-info-form">
+            <h2>Your Information</h2>
+            <form id="checkout-form" action="#" method="POST"> <!-- Action will point to your backend -->
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                     <small>Important: Access instructions will be sent to this email.</small>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile Number:</label>
+                    <input type="tel" id="mobile" name="mobile" required>
+                </div>
+
+                <div class="payment-section">
+                    <h2>Payment</h2>
+                    <p>You will be directed to a secure payment page powered by Cosmofeed.</p>
+                    <!-- Placeholder for Cosmofeed Payment Gateway Integration -->
+                    <div id="cosmofeed-payment-gateway-placeholder">
+                         <p>Click the button below to proceed to payment via Cosmofeed.</p>
+                         <!-- In a real implementation, this button click would trigger Cosmofeed's payment process -->
+                         <button type="submit" class="btn-primary">Proceed to Payment</button>
+                         <!-- Or, if Cosmofeed provides a JS library, you might initialize it here -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Load selected plan details from localStorage
+        window.onload = function() {
+            const planDetails = localStorage.getItem('selectedPlan');
+            const planDetailsDiv = document.getElementById('selected-plan-details');
+
+            if (planDetails) {
+                const plan = JSON.parse(planDetails);
+                planDetailsDiv.innerHTML = `
+                    <p><strong>Plan:</strong> ${plan.name}</p>
+                    <p><strong>Price:</strong> ₹${plan.price}</p>
+                `;
+                // You might also want to include hidden fields in the form
+                // to send this data to your backend when the form is submitted.
+                const form = document.getElementById('checkout-form');
+                 const planInput = document.createElement('input');
+                 planInput.type = 'hidden';
+                 planInput.name = 'planName';
+                 planInput.value = plan.name;
+                 form.appendChild(planInput);
+
+                 const priceInput = document.createElement('input');
+                 priceInput.type = 'hidden';
+                 priceInput.name = 'planPrice';
+                 priceInput.value = plan.price;
+                 form.appendChild(priceInput);
+
+
+            } else {
+                planDetailsDiv.innerHTML = "<p>No plan selected. Please go back to the <a href='index.html'>homepage</a> to select a plan.</p>";
+                 document.getElementById('checkout-form').style.display = 'none'; // Hide form if no plan
+            }
+
+             // Prevent default form submission if you're handling payment via JS/API
+             const checkoutForm = document.getElementById('checkout-form');
+             checkoutForm.addEventListener('submit', function(event) {
+                 event.preventDefault(); // Stop standard form submission
+                 // TODO: Implement Cosmofeed payment initiation logic here
+                 // This will involve sending the collected user data (name, email, mobile)
+                 // and plan data (name, price) to your backend, which will then
+                 // interact with the Cosmofeed API to create a payment link/session
+                 // and redirect the user.
+                 alert("Proceeding to Cosmofeed... (This is a placeholder)"); // Replace with actual integration
+                 // Example: window.location.href = '/your-backend-payment-initiation-endpoint';
+                 // After successful payment via Cosmofeed, the user should be
+                 // redirected back to success.html (you configure this in Cosmofeed settings)
+             });
+        };
+    </script>
+</body>
+</html>
