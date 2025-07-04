@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 q.nextElementSibling.classList.remove('show');
                  q.nextElementSibling.style.maxHeight = null; // Reset maxHeight for transition
                  q.nextElementSibling.style.paddingBottom = null; // Reset padding
+                 q.nextElementSibling.style.paddingTop = null; // Reset padding
             });
 
             // If this question was not active, open it
@@ -22,8 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 answer.classList.add('show');
                  // Set maxHeight to scrollHeight to allow transition to full height
-                answer.style.maxHeight = answer.scrollHeight + 20 + 'px'; // Add a little buffer
+                 // Add extra pixels to ensure content fits well + padding
+                answer.style.maxHeight = answer.scrollHeight + 30 + 'px';
                 answer.style.paddingBottom = '10px';
+                 answer.style.paddingTop = '10px';
             }
         });
     });
@@ -31,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Select Plan Button Click Handler ---
     const selectPlanButtons = document.querySelectorAll('.select-plan-btn');
-    const stickyCtaButton = document.querySelector('.sticky-cta .scroll-to-pricing'); // Get the sticky CTA button
 
     selectPlanButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -54,10 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Sticky CTA Button Behavior ---
-    // If the sticky button just scrolls to #pricing, handle that
-    // If it should also select a default plan or just go to checkout, modify here.
-    // The current HTML links it to #pricing, so we'll add a smooth scroll.
+    // --- Sticky CTA Button Scroll Handler ---
+    const stickyCtaButton = document.querySelector('.sticky-cta .scroll-to-pricing'); // Get the sticky CTA button
      if (stickyCtaButton) {
          stickyCtaButton.addEventListener('click', function(event) {
              event.preventDefault(); // Prevent default anchor link behavior
@@ -65,16 +65,44 @@ document.addEventListener('DOMContentLoaded', function() {
              const targetElement = document.getElementById(targetId);
 
              if (targetElement) {
+                 // Get the height of the sticky CTA to adjust scroll position
+                 const stickyCtaHeight = document.querySelector('.sticky-cta').offsetHeight;
                  window.scrollTo({
-                     top: targetElement.offsetTop - 70, // Adjust for fixed header/sticky bar
+                     top: targetElement.offsetTop - stickyCtaHeight - 20, // Adjust for sticky bar height + a little extra space
                      behavior: 'smooth'
                  });
              }
          });
      }
 
-    // Note: The scrolling review animation is handled by CSS.
-    // If you needed more control (like pause on hover), you would add JS here
-    // to manage the animation state. The CSS version already includes a basic pause on hover.
+
+     // --- Initialize Swiper Slider for Reviews ---
+     const swiper = new Swiper('.review-slider', { // Use the class you put on the swiper container
+        slidesPerView: 1, // Show 1 slide per view by default
+        spaceBetween: 30, // Space between slides
+        loop: true, // Enable looping
+        autoplay: { // Enable autoplay
+            delay: 5000, // 5 seconds between slides
+            disableOnInteraction: false, // Keep autoplaying even if user interacts
+        },
+        pagination: { // Enable pagination dots
+            el: '.swiper-pagination',
+            clickable: true, // Dots are clickable
+        },
+        navigation: { // Enable navigation arrows
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: { // Adjust number of slides per view based on screen width
+            768: { // When screen width is >= 768px
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            1024: { // When screen width is >= 1024px
+                slidesPerView: 3,
+                spaceBetween: 40 // Increase space on larger screens
+            }
+        }
+     });
 
 });
