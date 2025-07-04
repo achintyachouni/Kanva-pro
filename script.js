@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
      // --- Initialize Swiper Slider for Reviews ---
      const swiper = new Swiper('.review-slider', { // Use the class you put on the swiper container
-        slidesPerView: 1, // Show 1 slide per view by default
+        slidesPerView: 1, // Default: 1 slide per view (for mobile)
         spaceBetween: 30, // Space between slides
         loop: true, // Enable looping
         autoplay: { // Enable autoplay
@@ -93,15 +93,24 @@ document.addEventListener('DOMContentLoaded', function() {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        breakpoints: { // Adjust number of slides per view based on screen width
-            768: { // When screen width is >= 768px
-                slidesPerView: 2,
-                spaceBetween: 30
+        breakpoints: {
+            // When window width is >= 768px (Adjust breakpoint as needed for tablet/desktop)
+            768: { // Example breakpoint for larger screens (tablets)
+                 slidesPerView: 2, // Show 2 slides on screens >= 768px
+                 spaceBetween: 30
             },
-            1024: { // When screen width is >= 1024px
-                slidesPerView: 3,
-                spaceBetween: 40 // Increase space on larger screens
+            // When window width is >= 992px (Common desktop breakpoint)
+            992: {
+                slidesPerView: 3, // Show 3 slides on screens >= 992px (Desktop)
+                spaceBetween: 40 // Adjust space for 3 columns
             }
+             // If you need exactly 3 only on *large* desktop, use a higher breakpoint like 1200:
+             /*
+             1200: {
+                slidesPerView: 3,
+                spaceBetween: 40
+             }
+             */
         }
      });
 
