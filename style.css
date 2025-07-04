@@ -3,6 +3,7 @@
     --primary-color: #18a49d; /* Canva Teal */
     --primary-dark: #148a84;
     --secondary-color: #ff6b6b; /* Accent (e.g., for badges) */
+    --gold-color: #ffc107; /* Gold for stars/borders */
     --text-color-dark: #222;
     --text-color-body: #555;
     --background-light: #f8f8f8;
@@ -18,8 +19,7 @@ body {
     color: var(--text-color-body);
     line-height: 1.6;
     background-color: var(--background-light);
-     /* Add padding bottom equal to the sticky CTA height + some margin */
-    padding-bottom: 90px; /* Adjusted for slightly larger CTA area */
+    padding-bottom: 90px; /* Adjusted for sticky CTA height */
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
 }
 
 .section {
-    padding: 80px 0; /* Increased padding */
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -39,20 +39,20 @@ body {
 
 h1, h2, h3 {
     color: var(--text-color-dark);
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px;
     font-weight: 700;
 }
 
 h1 {
-    font-size: 3em; /* Slightly larger */
+    font-size: 3em;
 }
 
 h2 {
-    font-size: 2.4em; /* Slightly larger */
+    font-size: 2.4em;
 }
 
 h3 {
-    font-size: 1.7em; /* Slightly larger */
+    font-size: 1.7em;
 }
 
 .highlight {
@@ -61,15 +61,15 @@ h3 {
 
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 14px 30px; /* Increased padding */
+    padding: 14px 30px;
     text-decoration: none;
-    border-radius: 8px; /* Slightly more rounded */
+    border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+    transition: background-color 0.3s ease, transform 0.2s ease;
     border: none;
     cursor: pointer;
-    font-size: 1.1em; /* Slightly larger text */
-    text-transform: uppercase; /* Make text uppercase */
+    font-size: 1.1em;
+    text-transform: uppercase;
 }
 
 .btn-primary {
@@ -98,10 +98,10 @@ h3 {
 }
 
 .section-description {
-    font-size: 1.2em; /* Slightly larger */
+    font-size: 1.2em;
     color: var(--text-color-body);
-    margin-bottom: 50px; /* Increased margin */
-    max-width: 800px; /* Limit width */
+    margin-bottom: 50px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -109,8 +109,8 @@ h3 {
 
 /* Header / Hero Section */
 .hero-section {
-    background: linear-gradient(to right, #e0f7fa, #b2ebf2); /* Light gradient */
-    padding: 100px 0; /* Increased padding */
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+    padding: 100px 0;
     color: var(--text-color-dark);
 }
 
@@ -124,19 +124,19 @@ h3 {
 .hero-content {
     flex: 1;
     min-width: 300px;
-    margin-right: 40px; /* Increased margin */
+    margin-right: 40px;
     text-align: left;
 }
 
 .hero-content h1 {
-     font-size: 3.5em; /* Larger */
+     font-size: 3.5em;
      margin-bottom: 15px;
      color: var(--text-color-dark);
 }
 .hero-content h2 {
-    font-size: 1.5em; /* Larger */
+    font-size: 1.5em;
     color: var(--text-color-body);
-    margin-bottom: 40px; /* Increased margin */
+    margin-bottom: 40px;
     font-weight: 400;
 }
 
@@ -150,23 +150,23 @@ h3 {
 .hero-image img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* More rounded corners */
-    box-shadow: var(--card-hover-shadow); /* More prominent shadow */
+    border-radius: 10px;
+    box-shadow: var(--card-hover-shadow);
 }
 
 /* Value Proposition Section */
 .value-proposition .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Wider min width */
-    gap: 40px; /* Increased gap */
-    margin-top: 50px; /* Increased margin */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .feature-item {
     background-color: var(--background-white);
-    padding: 40px; /* Increased padding */
-    border-radius: 10px; /* More rounded */
-    box-shadow: var(--card-shadow); /* Added shadow */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -176,14 +176,14 @@ h3 {
 }
 
 .feature-item i {
-    font-size: 3.5em; /* Larger icon */
+    font-size: 3.5em;
     color: var(--primary-color);
-    margin-bottom: 20px; /* Increased margin */
+    margin-bottom: 20px;
 }
 
 .feature-item h3 {
     margin-bottom: 15px;
-    font-size: 1.5em; /* Larger */
+    font-size: 1.5em;
 }
 .feature-item p {
     color: var(--text-color-body);
@@ -194,9 +194,9 @@ h3 {
 /* Pricing Section */
 .pricing-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider min width */
-    gap: 40px; /* Increased gap */
-    margin-top: 50px; /* Increased margin */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .price-card {
@@ -217,7 +217,7 @@ h3 {
 }
 
 .price-card.featured {
-    border: 3px solid var(--primary-color); /* Thicker border */
+    border: 3px solid var(--primary-color);
 }
 
 .price-card.premium {
@@ -248,8 +248,8 @@ h3 {
     right: 15px;
     background-color: var(--secondary-color);
     color: white;
-    padding: 5px 12px; /* Slightly more padding */
-    border-radius: 5px; /* Slightly more rounded */
+    padding: 5px 12px;
+    border-radius: 5px;
     font-size: 0.9em;
     font-weight: 700;
     text-transform: uppercase;
@@ -263,7 +263,7 @@ h3 {
 }
 
 .price {
-    font-size: 3em; /* Larger price */
+    font-size: 3em;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 5px;
@@ -286,7 +286,7 @@ h3 {
 }
 
 .card-features li {
-    margin-bottom: 12px; /* More space */
+    margin-bottom: 12px;
     font-size: 1em;
     color: var(--text-color-body);
 }
@@ -328,7 +328,7 @@ h3 {
 
 
 .step-icon {
-    font-size: 4em; /* Larger icon */
+    font-size: 4em;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
@@ -344,66 +344,90 @@ h3 {
 }
 
 
-/* Customer Reviews Section (Card Slider) */
+/* Customer Reviews Section (Card Slider - Swiper) */
 .reviews-section {
      background-color: #e0f7fa; /* Lighter background */
 }
 
 .review-slider {
     width: 100%;
-    padding-top: 20px; /* Add padding for pagination dots */
+    padding-top: 60px; /* Add padding above cards for avatar */
     padding-bottom: 50px; /* Add padding for pagination dots */
-    overflow: hidden; /* Ensure slider boundaries */
+    overflow: hidden;
 }
 
 .review-card {
     background-color: var(--background-white);
     border-radius: 10px;
     box-shadow: var(--card-shadow);
-    padding: 30px;
-    text-align: left; /* Align text left for better reading */
-    display: flex; /* Use flexbox to push customer details down */
+    padding: 30px; /* Padding inside card */
+    padding-top: 80px; /* Add padding for avatar positioning */
+    text-align: center; /* Center content inside card */
+    position: relative; /* Needed for absolute avatar positioning */
+    display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space */
-    min-height: 200px; /* Ensure minimum height for cards */
+    align-items: center; /* Center items horizontally */
+     min-height: 300px; /* Ensure cards have a decent minimum height */
 }
 
-.review-card .review-content {
-     margin-bottom: 20px; /* Space between review text and customer details */
-     flex-grow: 1; /* Allow content to grow */
+.review-card .customer-avatar {
+    position: absolute;
+    top: -40px; /* Pull avatar up above the card */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80px; /* Avatar size */
+    height: 80px;
+    border: 5px solid var(--gold-color); /* Gold border */
+    border-radius: 50%; /* Make it round */
+    overflow: hidden; /* Clip image to circle */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff; /* Background in case image is transparent */
 }
 
-.review-card p {
-    font-size: 1em;
-    color: var(--text-color-body);
-    margin-bottom: 0;
+.review-card .customer-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the circle without distortion */
 }
 
-.review-card .customer-details {
-     margin-top: auto; /* Push details to bottom */
-     text-align: right; /* Align details right */
+.review-card .review-header {
+     margin-bottom: 20px;
 }
 
 .review-card .stars {
-     color: #ffc107; /* Gold color for stars */
-     font-size: 1em;
-     margin-bottom: 5px;
-     display: block; /* Make stars a block element */
+    color: var(--gold-color);
+    font-size: 1.2em; /* Slightly larger stars */
+    margin-bottom: 5px;
+     display: block; /* Ensure stars are on their own line */
 }
 
 .review-card .customer-name {
     font-weight: 600;
     color: var(--text-color-dark);
-    font-style: normal; /* Remove italic */
-     font-size: 1em;
-     margin-bottom: 0;
+    font-size: 1em;
+    margin-bottom: 0;
 }
+
+
+.review-card .review-content {
+     flex-grow: 1; /* Allow content to take up available space */
+     margin-bottom: 0; /* Remove bottom margin */
+}
+
+.review-card .review-content p {
+     font-size: 1em;
+     color: var(--text-color-body);
+     margin: 0;
+}
+
 
 /* Swiper Navigation (Arrows) */
 .swiper-button-next, .swiper-button-prev {
-    color: var(--primary-color) !important; /* Make arrows visible */
+    color: var(--primary-color) !important;
     transition: opacity 0.3s ease;
-     opacity: 0.7;
+    opacity: 0.7;
+     top: 55%; /* Slightly lower to account for raised avatar */
 }
 .swiper-button-next:hover, .swiper-button-prev:hover {
      opacity: 1;
@@ -411,7 +435,7 @@ h3 {
 
 /* Swiper Pagination (Dots) */
 .swiper-pagination-bullet-active {
-    background-color: var(--primary-color) !important; /* Active dot color */
+    background-color: var(--primary-color) !important;
 }
 
 
@@ -437,7 +461,7 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0; /* Add padding for click area */
+    padding: 10px 0;
 }
 
 .faq-question i {
@@ -450,18 +474,18 @@ h3 {
 }
 
 .faq-answer {
-    margin-top: 0; /* Remove top margin */
+    margin-top: 0;
     font-size: 1em;
     color: var(--text-color-body);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* Smoother transition */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
     padding-right: 20px;
-    padding-left: 10px; /* Indent answer slightly */
+    padding-left: 10px;
 }
 
 .faq-answer.show {
-    max-height: 300px; /* Increased height for longer answers */
+    max-height: 300px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -496,13 +520,13 @@ h3 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent dark background */
+    background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     padding: 15px 0;
     text-align: center;
     z-index: 100;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px); /* Optional blur effect */
+    backdrop-filter: blur(5px);
 }
 
 .sticky-cta .container {
@@ -516,17 +540,17 @@ h3 {
      margin: 0 20px 0 0;
      font-size: 1.1em;
      font-weight: 600;
-     color: #fff; /* Ensure text is white */
+     color: #fff;
 }
 .sticky-cta a.btn-primary {
      margin: 5px 0;
-     background-color: var(--secondary-color); /* Use accent color for sticky CTA */
+     background-color: var(--secondary-color);
      color: #fff;
      font-size: 1.1em;
      padding: 12px 25px;
 }
 .sticky-cta a.btn-primary:hover {
-     background-color: #e05a5a; /* Darker accent */
+     background-color: #e05a5a;
      transform: translateY(-2px);
 }
 
@@ -564,7 +588,7 @@ h3 {
 .order-summary h2, .customer-info-form h2, .payment-section h2 {
     margin-top: 0;
     color: var(--text-color-dark);
-    border-bottom: 1px solid #ddd; /* Darker border */
+    border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 1.5em;
@@ -588,12 +612,12 @@ h3 {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="tel"] {
-    width: calc(100% - 24px); /* Adjust for padding and border */
-    padding: 12px; /* More padding */
+    width: calc(100% - 24px);
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1em;
-     box-sizing: border-box; /* Include padding in width */
+     box-sizing: border-box;
 }
 
 .form-group small {
@@ -619,7 +643,7 @@ h3 {
 
 /* Payment Success Page Specific Styles */
 .success-page-body {
-    background-color: #e8f5e9; /* Light green background */
+    background-color: #e8f5e9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -640,12 +664,12 @@ h3 {
 
 .success-icon {
     font-size: 4em;
-    color: #4caf50; /* Green color */
+    color: #4caf50;
     margin-bottom: 20px;
 }
 
 .success-container h1 {
-    color: #388e3c; /* Darker green */
+    color: #388e3c;
     margin-bottom: 15px;
 }
 
@@ -671,29 +695,27 @@ h3 {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2.2em; }
+    h3 { font-size: 1.6em; }
+    .section { padding: 60px 0; }
+    .section-description { font-size: 1.1em; }
+
     .hero-section .container {
         flex-direction: column;
         text-align: center;
     }
-
     .hero-content {
         margin-right: 0;
         margin-bottom: 40px;
     }
-
     .hero-content h1, .hero-content h2 {
         text-align: center;
     }
-
     .hero-image {
-        order: -1; /* Place image above content on mobile */
+        order: -1;
         margin-bottom: 40px;
     }
-     h1 { font-size: 2.8em; }
-     h2 { font-size: 2.2em; }
-     h3 { font-size: 1.6em; }
-     .section { padding: 60px 0; }
-     .section-description { font-size: 1.1em; }
 
      .features-grid, .pricing-cards, .steps-grid {
          gap: 30px;
@@ -701,11 +723,11 @@ h3 {
 
     /* Swiper navigation adjustment for smaller screens */
     .swiper-button-next, .swiper-button-prev {
-        top: 50%; /* Center vertically */
+        top: 55%; /* Center vertically relative to adjusted card top */
         transform: translateY(-50%);
-        margin-top: 0; /* Remove default margin */
-         font-size: 1.8em !important; /* Adjust size */
-         padding: 0 10px; /* Add padding */
+        margin-top: 0;
+         font-size: 1.8em !important;
+         padding: 0 10px;
     }
     .swiper-button-prev { left: 10px !important; }
     .swiper-button-next { right: 10px !important; }
@@ -737,9 +759,22 @@ h3 {
          grid-template-columns: 1fr; /* Stack items vertically */
      }
 
-    .price-card, .feature-item, .step-item, .review-card {
+    .price-card, .feature-item, .step-item {
         padding: 25px;
     }
+
+     .review-card { /* Mobile View: 1 card */
+        padding: 25px;
+        padding-top: 70px; /* Adjust for smaller avatar */
+         min-height: 280px; /* Adjust min height */
+     }
+     .review-card .customer-avatar {
+         width: 70px; /* Smaller avatar */
+         height: 70px;
+         top: -35px; /* Adjust position */
+         border-width: 4px; /* Slightly thinner border */
+     }
+
 
     .price {
         font-size: 2.5em;
@@ -751,14 +786,14 @@ h3 {
 
     .sticky-cta .container {
         flex-direction: column;
-        padding: 10px 20px; /* Add padding to container */
+        padding: 10px 20px;
     }
     .sticky-cta p {
         margin: 0 0 10px 0;
         font-size: 1em;
     }
      .sticky-cta a.btn-primary {
-        width: 100%; /* Make button full width */
+        width: 100%;
          padding: 12px 20px;
      }
 
@@ -779,9 +814,9 @@ h3 {
         font-size: 1em;
     }
 
-     /* Swiper Breakpoint for 1 slide on small screens */
-    .review-slider {
-         padding-bottom: 40px; /* Adjust pagination padding */
+     .review-slider {
+         padding-top: 45px; /* Adjust for smaller avatar */
+         padding-bottom: 40px;
     }
 
 }
@@ -794,11 +829,17 @@ h3 {
      .hero-content h2 { font-size: 1.2em; }
      .price { font-size: 2.2em; }
      .section { padding: 40px 0; }
-     .sticky-cta p { font-size: 0.9em; margin-right: 10px; } /* Adjust margin */
+     .sticky-cta p { font-size: 0.9em; margin-right: 10px; }
      .sticky-cta a.btn-primary { font-size: 0.9em; padding: 10px 15px; }
 
-     .review-card { padding: 20px; }
-     .review-card p { font-size: 0.95em; }
+     .review-card { padding: 15px; padding-top: 60px; min-height: 250px;} /* Smaller padding */
+      .review-card .customer-avatar {
+         width: 60px; /* Even smaller avatar */
+         height: 60px;
+         top: -30px;
+         border-width: 3px;
+     }
+      .review-card .stars { font-size: 1em; }
+     .review-card .review-content p { font-size: 0.95em; }
      .review-card .customer-name { font-size: 0.95em; }
-
-}
+        }
